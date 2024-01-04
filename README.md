@@ -56,5 +56,5 @@ console.log('devices=', devices)
 ```
 
 See example in [src/examples](src/examples/):
-* (Status)[src/examples/Status.js]
-* (List Devices)[src/examples/Devices.js]
+* [Status](src/examples/Status.js)
+* [List Devices](src/examples/Devices.js)
