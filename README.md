@@ -7,7 +7,7 @@ Check [Dockerfile](Dockerfile) if you want to dev in docker.
 PORT=8080 npm start
 ```
 
-Visit http:localhost:8080 or click Connect under _Custom Plugin_ (under _System_ -> _Plugins_) in SPR ui.
+Visit [http:localhost:8080](http:localhost:8080) or click _Start dev mode_ under _Custom Plugin_ (under _System_ -> _Plugins_) in SPR ui.
 
 ![image](public/screenshot.png)
 
