@@ -23,7 +23,7 @@ export REACT_APP_TOKEN="SPR-TOKEN-HERE"
 PORT=8080 npm start
 ```
 
-### docker version in dev mode with token
+### Docker version in dev mode with token
 ```sh
 docker build -t spr-plugin-ui:latest .
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
