@@ -55,4 +55,6 @@ let devices = await api.get('/devices')
 console.log('devices=', devices)
 ```
 
-See example in [src/examples](src/examples/)
+See example in [src/examples](src/examples/):
+* (Status)[src/examples/Status.js]
+* (List Devices)[src/examples/Devices.js]
