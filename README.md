@@ -7,6 +7,8 @@ Check [Dockerfile](Dockerfile) if you want to dev in docker.
 PORT=8080 npm start
 ```
 
+![image](public/screenshot.png)
+
 Read more in the [API documentation](https://www.supernetworks.org/pages/api/0).
 
 **NOTE** need to pass a token if you want to talk to the spr api from your plugin in dev mode.
