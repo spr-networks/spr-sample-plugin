@@ -1,6 +1,6 @@
 # SPR custom plugin ui
 
-The ui for custom plugins use create-react-app & glustack, see deps.
+The ui for custom plugins use create-react-app & glustack, see [deps](blob/main/package.json#L5).
 Check Dockerfile if you want to dev in docker.
 
 ```sh
