@@ -46,7 +46,8 @@ PORT=8080 npm start
 npm run build
 ```
 
-when everything is done & working you can build & push it to spr
+
+when everything is done & work, push it to spr plugin repo
 
 # Examples
 
@@ -62,3 +63,22 @@ console.log('devices=', devices)
 See example in [src/examples](src/examples/):
 * [Status](src/examples/Status.js)
 * [List Devices](src/examples/Devices.js)
+
+# TODO
+
+NOTE: this dir should be inside plugin-x/frontend for your plugin.
+TODO "See spr-plugin-with-ui example here..."
+
+show complete flow for building a plugin, including ui.
+
+building in plugin directory should also take care of ui, smtg like this:
+```bash
+if [ -d "frontend"]; pushd frontend && npm run build && popd && cp -a frontend/build web; fi
+```
+(but use a separate Dockerfile for this)
+
+for building/serving plugin web code:
+* docker build will use build Dockerfile here & run `npm run build` web ui into plugin web/
+* on fs: plugins/plugin-x/web - same for web
+* this is linked from plugin json config, set key `Web: true`
+* web ui bundle is served @ /plugins/plugin-x/web as static
