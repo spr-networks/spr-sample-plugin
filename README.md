@@ -1,5 +1,7 @@
 # SPR custom plugin ui template
 
+frontend code in frontend dir
+
 The ui for custom plugins use create-react-app & glustack, see [deps](package.json#L5).
 Check [Dockerfile](Dockerfile) if you want to dev in docker.
 

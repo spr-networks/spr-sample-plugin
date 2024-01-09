@@ -1,3 +1,4 @@
+# NOTE for frontend stuff
 FROM node:alpine
 
 COPY . /app
