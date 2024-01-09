@@ -11,7 +11,7 @@ PORT=8080 npm start
 
 Visit [http:localhost:8080](http:localhost:8080) or click _Start dev mode_ under _Custom Plugin_ (under _System_ -> _Plugins_) in SPR ui.
 
-![image](public/screenshot.png)
+![image](frontend/public/screenshot.png)
 
 Read more in the [API documentation](https://www.supernetworks.org/pages/api/0).
 
