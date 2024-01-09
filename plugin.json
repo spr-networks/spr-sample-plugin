@@ -1,0 +1,5 @@
+{
+  "Name": "api_sample_plugin",
+  "ComposeFilePath": "plugins/user/api_sample_plugin/docker-compose.yml",
+  "Enabled": true
+}
