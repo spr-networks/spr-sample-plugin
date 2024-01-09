@@ -1,7 +1,9 @@
 # SPR custom plugin with ui template
 
-* code for sample backend api, also serve web ui
-* frontend code in frontend dir
+This is a sample plugin for spr, including:
+* basic api
+* frontend for the api
+* build for docker-compose and Dockerfile
 
 # Build
 
