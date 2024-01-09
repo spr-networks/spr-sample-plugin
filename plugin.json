@@ -1,5 +1,5 @@
 {
-  "Name": "sample_plugin",
-  "ComposeFilePath": "plugins/user/sample_plugin/docker-compose.yml",
+  "Name": "spr-sample-plugin",
+  "ComposeFilePath": "plugins/user/spr-sample-plugin/docker-compose.yml",
   "Enabled": true
 }
