@@ -10,8 +10,8 @@ x-labels:
   org.supernetworks.version: ${RELEASE_VERSION:-latest}${RELEASE_CHANNEL:-}
 
 services:
-  sample_plugin:
-    container_name: super_sample_plugin
+  spr-sample-plugin:
+    container_name: spr-sample-plugin
     network_mode: ${NETWORK_MODE:-host}
     build:
       context: .
