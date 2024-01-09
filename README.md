@@ -3,6 +3,18 @@
 * code for sample backend api, also serve web ui
 * frontend code in frontend dir
 
+# Build
+
+test a local build of your plugin in docker:
+```sh
+export DOCKER_BUILDKIT=1
+docker-compose build
+mkdir -p state/plugins/sample_plugin
+docker-compose up -d
+curl --unix-socket ./state/plugins/sample_plugin/socket http://localhost/test
+curl --unix-socket ./state/plugins/sample_plugin/socket http://localhost/ui
+```
+
 # Frontend - UI Code
 
 The ui for custom plugins use create-react-app & glustack, see [deps](package.json#L5).

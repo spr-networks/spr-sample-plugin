@@ -21,5 +21,4 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - "${SUPERDIR}./state/plugins/sample_plugin:/state/plugins/sample_plugin"
-      - "${SUPERDIR}./state/public/:/state/public/:ro"
 #      - "${SUPERDIR}./state/api/:/state/api/:ro" #uncomment me for SPRBUS access
