@@ -13,12 +13,26 @@ COPY code/ /code/
 ARG USE_TMPFS=true
 RUN --mount=type=tmpfs,target=/tmpfs \
     [ "$USE_TMPFS" = "true" ] && ln -s /tmpfs /root/go; \
-    go build -ldflags "-s -w" -o /api_sample_plugin /code/sample_plugin.go
+    go build -ldflags "-s -w" -o /sample_plugin /code/sample_plugin.go
 
 
+# build ui
+FROM node:18 as builder-ui
+WORKDIR /app
+COPY frontend ./
+ARG USE_TMPFS=true
+RUN --mount=type=tmpfs,target=/tmpfs \
+    [ "$USE_TMPFS" = "true" ] && \
+        mkdir /tmpfs/cache /tmpfs/node_modules && \
+        ln -s /tmpfs/node_modules /app/node_modules && \
+        ln -s /tmpfs/cache /usr/local/share/.cache; \
+    yarn install --network-timeout 86400000 && yarn run build
+
+# link to main image
 FROM ghcr.io/spr-networks/container_template:latest
 ENV DEBIAN_FRONTEND=noninteractive
 #RUN apt-get update && apt-get install -y --no-install-recommends tcpdump && rm -rf /var/lib/apt/lists/*
 COPY scripts /scripts/
-COPY --from=builder /api_sample_plugin /
+COPY --from=builder /sample_plugin /
+COPY --from=builder-ui /app/build/ /ui/
 ENTRYPOINT ["/scripts/startup.sh"]

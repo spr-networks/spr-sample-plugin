@@ -2,4 +2,4 @@
 
 echo "sample plugin started"
 
-/api_sample_plugin
+/sample_plugin

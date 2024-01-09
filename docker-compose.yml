@@ -10,8 +10,8 @@ x-labels:
   org.supernetworks.version: ${RELEASE_VERSION:-latest}${RELEASE_CHANNEL:-}
 
 services:
-  api_sample_plugin:
-    container_name: superapi_sample_plugin
+  sample_plugin:
+    container_name: super_sample_plugin
     network_mode: ${NETWORK_MODE:-host}
     build:
       context: .
@@ -20,6 +20,6 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - "${SUPERDIR}./state/plugins/api_sample_plugin:/state/plugins/api_sample_plugin"
+      - "${SUPERDIR}./state/plugins/sample_plugin:/state/plugins/sample_plugin"
       - "${SUPERDIR}./state/public/:/state/public/:ro"
 #      - "${SUPERDIR}./state/api/:/state/api/:ro" #uncomment me for SPRBUS access

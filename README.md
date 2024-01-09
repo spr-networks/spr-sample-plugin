@@ -71,10 +71,8 @@ See example in [src/examples](src/examples/):
 
 # TODO
 
-NOTE: this dir should be inside plugin-x/frontend for your plugin.
-TODO "See spr-plugin-with-ui example here..."
-
-show complete flow for building a plugin, including ui.
+* show complete flow for building a plugin, including ui
+* add another sample repo with js only
 
 building in plugin directory should also take care of ui, smtg like this:
 ```bash
