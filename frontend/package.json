@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@gluestack-style/react": "^1.0.31",
     "@gluestack-ui/config": "^1.0.10",
