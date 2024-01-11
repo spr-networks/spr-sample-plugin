@@ -3,6 +3,6 @@
   "ComposeFilePath": "plugins/user/spr-sample-plugin/docker-compose.yml",
   "Enabled": true,
   "URI": "user/spr-sample-plugin",
-  "UIURL": "user/spr-sample-plugin/ui",
+  "UIURL": "user/spr-sample-plugin",
   "UnixPath": "/state/plugins/sample_plugin/socket"
 }
