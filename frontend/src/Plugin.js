@@ -4,6 +4,7 @@ import { Text, View, VStack } from '@gluestack-ui/themed'
 
 import Status from './examples/Status'
 import Devices from './examples/Devices'
+import Test from './examples/Test'
 
 const Plugin = forwardRef((props, ref) => {
   const [message, setMessage] = useState(null)
@@ -31,6 +32,7 @@ const Plugin = forwardRef((props, ref) => {
             <Text>Main event = {message}</Text>
           </VStack>
         ) : null}
+        <Test />
         <Status />
         <Devices />
       </VStack>

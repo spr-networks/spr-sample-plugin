@@ -1,20 +1,22 @@
 # SPR custom plugin with ui template
 
 This is a sample plugin for spr, including:
-* basic api
-* frontend for the api
-* build for docker-compose and Dockerfile
+
+- basic api
+- frontend for the api
+- build for docker-compose and Dockerfile
 
 # Build
 
 test a local build of your plugin in docker:
+
 ```sh
 export DOCKER_BUILDKIT=1
 docker-compose build
 mkdir -p state/plugins/sample_plugin
 docker-compose up -d
 curl --unix-socket ./state/plugins/sample_plugin/socket http://localhost/test
-curl --unix-socket ./state/plugins/sample_plugin/socket http://localhost/ui
+curl --unix-socket ./state/plugins/sample_plugin/socket http://localhost/index.html
 ```
 
 # Frontend - UI Code
@@ -43,6 +45,7 @@ PORT=8080 npm start
 ```
 
 ### Docker version in dev mode with token
+
 ```sh
 docker build -t spr-plugin-ui:latest .
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
@@ -65,7 +68,6 @@ PORT=8080 npm start
 npm run build
 ```
 
-
 when everything is done & work, push it to spr plugin repo
 
 # Examples
@@ -80,22 +82,26 @@ console.log('devices=', devices)
 ```
 
 See example in [src/examples](src/examples/):
-* [Status](src/examples/Status.js)
-* [List Devices](src/examples/Devices.js)
+
+- [Status](src/examples/Status.js)
+- [List Devices](src/examples/Devices.js)
 
 # TODO
 
-* show complete flow for building a plugin, including ui
-* add another sample repo with js only
+- show complete flow for building a plugin, including ui
+- add another sample repo with js only
 
 building in plugin directory should also take care of ui, smtg like this:
+
 ```bash
 if [ -d "frontend"]; pushd frontend && npm run build && popd && cp -a frontend/build web; fi
 ```
+
 (but use a separate Dockerfile for this)
 
 for building/serving plugin web code:
-* docker build will use build Dockerfile here & run `npm run build` web ui into plugin web/
-* on fs: plugins/plugin-x/web - same for web
-* this is linked from plugin json config, set key `Web: true`
-* web ui bundle is served @ /plugins/plugin-x/web as static
+
+- docker build will use build Dockerfile here & run `npm run build` web ui into plugin web/
+- on fs: plugins/plugin-x/web - same for web
+- this is linked from plugin json config, set key `Web: true`
+- web ui bundle is served @ /plugins/plugin-x/web as static
