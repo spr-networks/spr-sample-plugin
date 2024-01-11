@@ -85,7 +85,7 @@ func main() {
 
 	// map /ui to /ui on fs
 	spa := spaHandler{staticPath: "/ui", indexPath: "index.html"}
-	unix_plugin_router.PathPrefix("/ui").Handler(spa)
+	unix_plugin_router.PathPrefix("/").Handler(spa)
 
 	os.Remove(UNIX_PLUGIN_LISTENER)
 	unixPluginListener, err := net.Listen("unix", UNIX_PLUGIN_LISTENER)
