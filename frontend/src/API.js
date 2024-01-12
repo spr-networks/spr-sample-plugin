@@ -21,7 +21,7 @@ class API {
 
   getApiURL() {
     const { REACT_APP_API } = process.env
-    const API_URL = REACT_APP_API || window.location.href
+    const API_URL = REACT_APP_API || SPR_API_URL
     return API_URL
   }
 
