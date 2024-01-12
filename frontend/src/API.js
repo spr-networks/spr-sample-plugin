@@ -21,7 +21,7 @@ class API {
 
   getApiURL() {
     const { REACT_APP_API } = process.env
-    const API_URL = REACT_APP_API || 'http://spr.local'
+    const API_URL = REACT_APP_API || window.location.href
     return API_URL
   }
 
