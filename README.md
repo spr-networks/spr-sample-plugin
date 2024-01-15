@@ -6,6 +6,12 @@ This is a sample plugin for spr, including:
 - frontend for the api
 - build for docker-compose and Dockerfile
 
+## Steps to create a new plugin
+
+- clone this repo
+- name your plugin
+- edit [plugin.json](plugin.json)
+
 # Build
 
 test a local build of your plugin in docker:
