@@ -1,8 +1,8 @@
 {
   "Name": "spr-sample-plugin",
   "ComposeFilePath": "plugins/user/spr-sample-plugin/docker-compose.yml",
-  "Enabled": true,
+  "UnixPath": "/state/plugins/sample_plugin/socket",
   "URI": "user/spr-sample-plugin",
-  "UIURL": "user/spr-sample-plugin",
-  "UnixPath": "/state/plugins/sample_plugin/socket"
+  "HasUI": true,
+  "Enabled": true
 }
