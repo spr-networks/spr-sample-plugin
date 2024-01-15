@@ -8,12 +8,13 @@ class API {
     const { REACT_APP_TOKEN } = process.env
     if (REACT_APP_TOKEN) {
       this.authHeaders = `Bearer ${REACT_APP_TOKEN}`
+
       return this.authHeaders
     }
 
     //else get it from localStorage
     let login = localStorage.user
-    let user = JSON.parse(login)
+    let user = login ? JSON.parse(login) : null
     this.authHeaders = user?.authdata ? 'Basic ' + user.authdata : null
 
     return this.authHeaders
@@ -21,7 +22,7 @@ class API {
 
   getApiURL() {
     const { REACT_APP_API } = process.env
-    const API_URL = REACT_APP_API || SPR_API_URL
+    const API_URL = REACT_APP_API || window?.SPR_API_URL || ''
     return API_URL
   }
 
