@@ -42,39 +42,48 @@ Read more in the [API documentation](https://www.supernetworks.org/pages/api/0).
 
 **NOTE** need to pass a token if you want to talk to the spr api from your plugin in dev mode.
 Add a token in the spr ui under _System -> Auth_ and pass it with _REACT_APP_TOKEN_ environment variable.
+Define SPR API url using the _REACT_APP_API_ environment variable.
 
-## dev mode
+## Dev mode
 
 ```sh
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
+export REACT_APP_API="http://spr.local" # SPR IP
 PORT=8080 npm start
 ```
 
-### Docker version in dev mode with token
+The ui will setup a connection to provided API using the token for auth. These will be populated automatically for your plugin when built, _make sure there are no hardcoded URL's or tokens in your repo_.
+
+### Docker version in Dev mode with token
 
 ```sh
 docker build -t spr-plugin-ui:latest .
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
+export REACT_APP_API="http://spr.local"
 docker run --rm -ti -p 8080:3000 -e "REACT_APP_TOKEN=$REACT_APP_TOKEN" spr-plugin-ui
 ```
 
 In SPR ui navigate to _Plugins_, press _Custom Plugin_ & connect to verify.
 
-## dev mode with spr on localhost:
+## Dev mode with spr on localhost
 
 ```sh
-export REACT_APP_API="http://localhost:3000"
+export REACT_APP_API="http://localhost:8000"
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
 PORT=8080 npm start
 ```
 
-## build
+## Build
 
 ```sh
 npm run build
 ```
 
 when everything is done & work, push it to spr plugin repo
+
+## Install
+
+Drop the github repo url into "Add Plugin from URL" view under Plugins.
 
 # Examples
 
