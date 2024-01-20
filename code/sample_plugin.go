@@ -38,7 +38,7 @@ func busListener() {
 
 */
 
-var UNIX_PLUGIN_LISTENER = "/state/plugins/sample_plugin/socket"
+var UNIX_PLUGIN_LISTENER = "/state/plugins/spr-sample-plugin/socket"
 
 // set up SPA handler. From gorilla mux's documentation
 type spaHandler struct {
