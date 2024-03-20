@@ -1,10 +1,10 @@
 {
   "Name": "spr-sample-plugin",
   "ComposeFilePath": "plugins/user/spr-sample-plugin/docker-compose.yml",
-  "UnixPath": "/state/plugins/sample_plugin/socket",
+  "UnixPath": "/state/plugins/spr-sample-plugin/socket",
   "URI": "spr-sample-plugin",
   "HasUI": true,
   "SandboxedUI": false,
-  "InstallTokenPath": "/configs/plugins/spr-sample-plugin/api-token"
-  "Enabled": true,
+  "InstallTokenPath": "/configs/plugins/spr-sample-plugin/api-token",
+  "Enabled": true
 }
