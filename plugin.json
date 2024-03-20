@@ -5,6 +5,6 @@
   "URI": "spr-sample-plugin",
   "HasUI": true,
   "SandboxedUI": false,
-  "InstallTokenPath": "./configs/plugins/spr-sample-plugin/api-token"
+  "InstallTokenPath": "/configs/plugins/spr-sample-plugin/api-token"
   "Enabled": true,
 }
