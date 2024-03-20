@@ -31,7 +31,7 @@ The ui for custom plugins use create-react-app & glustack, see [deps](package.js
 Check [Dockerfile](Dockerfile) if you want to dev in docker.
 
 ```sh
-PORT=8080 npm start
+REACT_APP_TOKEN= REACT_APP_API= PORT=8080 npm start
 ```
 
 Visit [http:localhost:8080](http:localhost:8080) or click _Start dev mode_ under _Custom Plugin_ (under _System_ -> _Plugins_) in SPR ui.
