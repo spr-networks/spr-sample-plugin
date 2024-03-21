@@ -1,10 +1,11 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react'
 
-import { Text, View, VStack } from '@gluestack-ui/themed'
+import { View, VStack } from '@gluestack-ui/themed'
 
 import Status from './examples/Status'
 import Devices from './examples/Devices'
 import Test from './examples/Test'
+//import DebugEvent from './DebugEvent'
 
 const Plugin = forwardRef((props, ref) => {
   const [message, setMessage] = useState(null)
@@ -22,19 +23,10 @@ const Plugin = forwardRef((props, ref) => {
       sx={{ _dark: { bg: '$backgroundContentDark' } }}
     >
       <VStack space="lg">
-        {message ? (
-          <VStack
-            space="md"
-            p="$4"
-            bg="$backgroundCardLight"
-            sx={{ _dark: { bg: '$backgroundCardDark' } }}
-          >
-            <Text>Main event = {message}</Text>
-          </VStack>
-        ) : null}
         <Test />
         <Status />
         <Devices />
+        {/*<DebugEvent message={message} />*/}
       </VStack>
     </View>
   )
