@@ -14,7 +14,8 @@ services:
     container_name: spr-sample-plugin
     network_mode: ${NETWORK_MODE:-host}
     build:
-      context: .
+# BUILDCTX is required for SPR to build this correctly in the 'up' command
+      context: "${BUILDCTX}."
       labels: *default-labels
     logging: *default-logging
     volumes:
