@@ -61,8 +61,6 @@ The ui will setup a connection to provided API using the token for auth. These w
 ### Docker version in Dev mode with token
 
 ```sh
-cd frontend/
-yarn install
 docker build -t spr-plugin-ui:latest .
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
 export REACT_APP_API="http://spr.local"
