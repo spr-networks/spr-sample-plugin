@@ -32,7 +32,7 @@ Check [Dockerfile](Dockerfile) if you want to dev in docker.
 
 ```sh
 cd frontend/
-yarn install
+npm install
 REACT_APP_TOKEN= REACT_APP_API= PORT=8080 npm start
 ```
 
@@ -50,7 +50,7 @@ Define SPR API url using the _REACT_APP_API_ environment variable.
 
 ```sh
 cd frontend/
-yarn install
+npm install
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
 export REACT_APP_API="http://spr.local" # SPR IP
 PORT=8080 npm start
@@ -73,7 +73,7 @@ In SPR ui navigate to _Plugins_, press _Custom Plugin_ & connect to verify.
 
 ```sh
 cd frontend/
-yarn install
+npm install
 export REACT_APP_API="http://localhost:8000"
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
 PORT=8080 npm start
