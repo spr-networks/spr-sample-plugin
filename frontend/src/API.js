@@ -5,16 +5,28 @@ class API {
   authHeaders = ''
 
   isDevMode() {
-    return process.env?.NODE_ENV == 'development'
+    return process.env?.NODE_ENV === 'development'
   }
 
   getAuthHeaders() {
-    const { REACT_APP_TOKEN } = process.env
-    const APP_TOKEN = window?.SPR_API_TOKEN || REACT_APP_TOKEN || ''
-    if (APP_TOKEN) {
-      this.authHeaders = `Bearer ${APP_TOKEN}`
+    //dev or import from nodejs
+    if (typeof process !== 'undefined') {
+      const { REACT_APP_TOKEN } = process.env
+      if (!REACT_APP_TOKEN) {
+        throw new Error('missing REACT_APP_TOKEN')
+      }
 
+      this.authHeaders = `Bearer ${REACT_APP_TOKEN}`
       return this.authHeaders
+    }
+
+    if (typeof window !== 'undefined') {
+      const { SPR_API_TOKEN } = window
+      if (SPR_API_TOKEN) {
+        this.authHeaders = `Bearer ${SPR_API_TOKEN}`
+
+        return this.authHeaders
+      }
     }
 
     //else get it from localStorage
@@ -26,9 +38,18 @@ class API {
   }
 
   getApiURL() {
-    const { REACT_APP_API } = process.env
-    const API_URL = window?.SPR_API_URL || REACT_APP_API || ''
-    return API_URL
+    if (typeof process !== 'undefined') {
+      const { REACT_APP_API } = process.env
+      if (!REACT_APP_API) {
+        throw new Error('missing REACT_APP_API')
+      }
+
+      return REACT_APP_API
+    }
+
+    if (typeof window !== 'undefined' && window.SPR_API_URL) {
+      return window.SPR_API_URL
+    }
   }
 
   async fetch(method = 'GET', url, body) {

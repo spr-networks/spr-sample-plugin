@@ -9,12 +9,12 @@ import {
   Text
 } from '@gluestack-ui/themed'
 
-export default (props) => {
+const Settings = (props) => {
   const isDev = process.env?.NODE_ENV === 'development'
 
   const [apiUrl, setApiUrl] = useState('')
   const [apiToken, setApiToken] = useState('')
-  const [showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(true)
 
   useEffect(() => {
     if (process.env.REACT_APP_API) {
@@ -84,3 +84,5 @@ export default (props) => {
     </HStack>
   )
 }
+
+export default Settings

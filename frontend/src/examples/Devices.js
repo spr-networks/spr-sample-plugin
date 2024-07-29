@@ -8,7 +8,7 @@ import {
   Text,
   VStack
 } from '@gluestack-ui/themed'
-import { api } from '../API'
+import { api } from '../API.js'
 
 const Devices = () => {
   const [devices, setDevices] = useState([])

@@ -2,11 +2,11 @@ import React, { forwardRef, useImperativeHandle, useState } from 'react'
 
 import { View, VStack } from '@gluestack-ui/themed'
 
-import Settings from './Settings'
-import Status from './examples/Status'
-import Devices from './examples/Devices'
-import Test from './examples/Test'
-//import DebugEvent from './DebugEvent'
+import Settings from './Settings.js'
+import Status from './examples/Status.js'
+import Devices from './examples/Devices.js'
+import Test from './examples/Test.js'
+//import DebugEvent from './DebugEvent.js'
 
 const Plugin = forwardRef((props, ref) => {
   const [message, setMessage] = useState(null)

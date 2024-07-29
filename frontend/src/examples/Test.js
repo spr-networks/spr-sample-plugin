@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { Button, ButtonText, Heading, Text, VStack } from '@gluestack-ui/themed'
-import { api } from '../API'
+import { api } from '../API.js'
 
 // api @ /plugins/spr-sample-plugin
 // ui  @ /plugins/spr-sample-plugin/ui
