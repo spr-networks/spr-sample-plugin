@@ -31,6 +31,8 @@ The ui for custom plugins use create-react-app & glustack, see [deps](package.js
 Check [Dockerfile](Dockerfile) if you want to dev in docker.
 
 ```sh
+cd frontend/
+npm install
 REACT_APP_TOKEN= REACT_APP_API= PORT=8080 npm start
 ```
 
@@ -47,6 +49,8 @@ Define SPR API url using the _REACT_APP_API_ environment variable.
 ## Dev mode
 
 ```sh
+cd frontend/
+npm install
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
 export REACT_APP_API="http://spr.local" # SPR IP
 PORT=8080 npm start
@@ -68,6 +72,8 @@ In SPR ui navigate to _Plugins_, press _Custom Plugin_ & connect to verify.
 ## Dev mode with spr on localhost
 
 ```sh
+cd frontend/
+npm install
 export REACT_APP_API="http://localhost:8000"
 export REACT_APP_TOKEN="SPR-TOKEN-HERE"
 PORT=8080 npm start
