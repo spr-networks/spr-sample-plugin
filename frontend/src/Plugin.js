@@ -2,6 +2,7 @@ import React, { forwardRef, useImperativeHandle, useState } from 'react'
 
 import { View, VStack } from '@gluestack-ui/themed'
 
+import Settings from './Settings'
 import Status from './examples/Status'
 import Devices from './examples/Devices'
 import Test from './examples/Test'
@@ -23,6 +24,7 @@ const Plugin = forwardRef((props, ref) => {
       sx={{ _dark: { bg: '$backgroundContentDark' } }}
     >
       <VStack space="lg">
+        <Settings />
         <Test />
         <Status />
         <Devices />

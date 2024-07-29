@@ -4,10 +4,15 @@ class API {
   baseURL = ''
   authHeaders = ''
 
+  isDevMode() {
+    return process.env?.NODE_ENV == 'development'
+  }
+
   getAuthHeaders() {
     const { REACT_APP_TOKEN } = process.env
-    if (REACT_APP_TOKEN) {
-      this.authHeaders = `Bearer ${REACT_APP_TOKEN}`
+    const APP_TOKEN = window?.SPR_API_TOKEN || REACT_APP_TOKEN || ''
+    if (APP_TOKEN) {
+      this.authHeaders = `Bearer ${APP_TOKEN}`
 
       return this.authHeaders
     }
@@ -22,7 +27,7 @@ class API {
 
   getApiURL() {
     const { REACT_APP_API } = process.env
-    const API_URL = REACT_APP_API || window?.SPR_API_URL || ''
+    const API_URL = window?.SPR_API_URL || REACT_APP_API || ''
     return API_URL
   }
 
@@ -32,7 +37,7 @@ class API {
       method = 'GET'
     }
 
-    if (!this.authHeaders) {
+    if (!this.authHeaders || this.isDevMode()) {
       this.authHeaders = this.getAuthHeaders()
     }
 
