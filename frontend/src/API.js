@@ -11,12 +11,12 @@ class API {
   getAuthHeaders() {
     //dev or import from nodejs
     if (typeof process !== 'undefined') {
-      const { REACT_APP_TOKEN } = process.env
-      if (!REACT_APP_TOKEN) {
-        throw new Error('missing REACT_APP_TOKEN')
+      const TOKEN = process.env.REACT_APP_TOKEN || process.env.SPR_API_TOKEN
+      if (!TOKEN) {
+        throw new Error('missing REACT_APP_TOKEN / SPR_API_TOKEN environment')
       }
 
-      this.authHeaders = `Bearer ${REACT_APP_TOKEN}`
+      this.authHeaders = `Bearer ${TOKEN}`
       return this.authHeaders
     }
 
@@ -39,12 +39,12 @@ class API {
 
   getApiURL() {
     if (typeof process !== 'undefined') {
-      const { REACT_APP_API } = process.env
-      if (!REACT_APP_API) {
-        throw new Error('missing REACT_APP_API')
+      const API_URL = process.env.REACT_APP_API || process.env.SPR_API_URL
+      if (!API_URL) {
+        throw new Error('missing REACT_APP_API / SPR_API_URL environment')
       }
 
-      return REACT_APP_API
+      return API_URL
     }
 
     if (typeof window !== 'undefined' && window.SPR_API_URL) {
