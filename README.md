@@ -17,12 +17,15 @@ This is a sample plugin for spr, including:
 test a local build of your plugin in docker:
 
 ```sh
+export SUPERDIR=/home/spr/super/ # spr root directory
+mkdir -p $SUPERDIR/state/plugins/spr-sample-plugin
+# where your plugin code/repository is located
+cd $SUPERDIR/plugins/user/spr-sample-plugin
 export DOCKER_BUILDKIT=1
 docker-compose build
-mkdir -p state/plugins/sample_plugin
 docker-compose up -d
-curl --unix-socket ./state/plugins/sample_plugin/socket http://localhost/test
-curl --unix-socket ./state/plugins/sample_plugin/socket http://localhost/index.html
+curl --unix-socket $SUPERDIR/state/plugins/spr-sample-plugin/socket http://localhost/test
+curl --unix-socket $SUPERDIR/state/plugins/spr-sample-plugin/socket http://localhost/index.html
 ```
 
 # Frontend - UI Code
@@ -111,18 +114,3 @@ See example in [src/examples](src/examples/):
 
 - show complete flow for building a plugin, including ui
 - add another sample repo with js only
-
-building in plugin directory should also take care of ui, smtg like this:
-
-```bash
-if [ -d "frontend"]; pushd frontend && npm run build && popd && cp -a frontend/build web; fi
-```
-
-(but use a separate Dockerfile for this)
-
-for building/serving plugin web code:
-
-- docker build will use build Dockerfile here & run `npm run build` web ui into plugin web/
-- on fs: plugins/plugin-x/web - same for web
-- this is linked from plugin json config, set key `Web: true`
-- web ui bundle is served @ /plugins/plugin-x/web as static
