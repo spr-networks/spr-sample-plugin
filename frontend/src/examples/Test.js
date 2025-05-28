@@ -9,7 +9,8 @@ import { api } from '../API.js'
 const Test = () => {
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
-  const pluginURL = '/plugins/spr-sample-plugin'
+  let pluginName = window?.SPR_PLUGIN?.URI || 'spr-sample-plugin'
+  const pluginURL = `/plugins/${pluginName}`
 
   const onPress = () => {
     let apiURL = api.getApiURL()
